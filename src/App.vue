@@ -9,8 +9,6 @@
 <script>
 import Block from './components/Block.vue';
 export default {
-  name: 'App',
-
   components: {
     Block,
   },
@@ -18,7 +16,7 @@ export default {
   data() {
     return {
       isPlaying: false,
-      delay: null,
+      delay: 0,
     };
   },
 

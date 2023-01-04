@@ -1,15 +1,39 @@
 <template>
-  <div class="block">Click Me</div>
+  <div v-if="showBlock" @click="onClose" class="block" style="cursor: pointer">
+    Click Me
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'Block',
+  props: ['delay'],
 
-  props: {
-    delay: {
-      type: Number,
-      required: true,
+  data() {
+    return {
+      showBlock: false,
+    };
+  },
+
+  mounted() {
+    console.log('Component mounted');
+
+    setTimeout(() => {
+      this.showBlock = true;
+      console.log(this.delay);
+    }, this.delay);
+  },
+
+  updated() {
+    console.log('Component updated');
+  },
+
+  unmounted() {
+    console.log('Component unmounted');
+  },
+
+  methods: {
+    onClose() {
+      this.showBlock = false;
     },
   },
 };
