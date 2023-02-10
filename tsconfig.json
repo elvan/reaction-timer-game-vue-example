@@ -1,5 +1,7 @@
 {
+  "extends": "@vue/tsconfig/tsconfig.web.json",
   "compilerOptions": {
+    "allowJs": true,
     "target": "es5",
     "module": "esnext",
     "baseUrl": "./",

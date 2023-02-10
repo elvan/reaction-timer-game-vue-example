@@ -1,7 +1,5 @@
 <template>
-  <div v-if="showBlock" @click="onClose" class="block" style="cursor: pointer">
-    Click Me
-  </div>
+  <div v-if="showBlock" @click="stopTimer" class="block">Click Me</div>
 </template>
 
 <script>
@@ -11,15 +9,15 @@ export default {
   data() {
     return {
       showBlock: false,
+      timer: null,
+      reactionTime: 0,
     };
   },
 
   mounted() {
-    console.log('Component mounted');
-
     setTimeout(() => {
       this.showBlock = true;
-      console.log(this.delay);
+      this.startTimer();
     }, this.delay);
   },
 
@@ -32,8 +30,15 @@ export default {
   },
 
   methods: {
-    onClose() {
-      this.showBlock = false;
+    startTimer() {
+      this.timer = setInterval(() => {
+        this.reactionTime += 10;
+      }, 10);
+    },
+
+    stopTimer() {
+      clearInterval(this.timer);
+      this.timer = null;
     },
   },
 };
@@ -48,5 +53,6 @@ export default {
   text-align: center;
   padding: 100px 0;
   margin: 40px auto;
+  cursor: pointer;
 }
 </style>
