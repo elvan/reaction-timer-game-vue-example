@@ -6,6 +6,8 @@
 export default {
   props: ['delay'],
 
+  emits: ['end'],
+
   data() {
     return {
       showBlock: false,
@@ -39,6 +41,8 @@ export default {
     stopTimer() {
       clearInterval(this.timer);
       this.timer = null;
+
+      this.$emit('end', this.reactionTime);
     },
   },
 };
