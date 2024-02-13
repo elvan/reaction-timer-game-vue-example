@@ -1,5 +1,13 @@
 # Reaction Timer Game
 
+## Screenshots
+
+![](https://raw.githubusercontent.com/elvan/reaction-timer-game-vue-example/main/__screenshots__/Screenshot%202024-02-13%20202010.png)
+
+---
+
+![](https://raw.githubusercontent.com/elvan/reaction-timer-game-vue-example/main/__screenshots__/Screenshot%202024-02-13%20202052.png)
+
 ## Description
 
 The Reaction Timer Game is a Vue.js project designed to test and improve users' reaction times in a fun and interactive way. It challenges players to respond to visual cues with speed and accuracy, offering a dynamic way to gauge and enhance reflexes over time.
