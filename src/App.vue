@@ -1,11 +1,28 @@
 <template>
-  <h1>Reaction Timer</h1>
+  <h1>Ninja Reaction Timer</h1>
+  <button @click="start" :disabled="isPlaying">play</button>
+  <Block v-if="isPlaying" :delay="delay" />
 </template>
 
 <script>
+import Block from './components/Block';
+
 export default {
-  name: "App",
-  components: {},
+  name: 'App',
+  components: { Block },
+  data() {
+    return {
+      isPlaying: false,
+      delay: null,
+    };
+  },
+  methods: {
+    start() {
+      // set time amount (ms)
+      this.delay = 2000 + Math.random() * 5000;
+      this.isPlaying = true;
+    },
+  },
 };
 </script>
 
@@ -17,5 +34,22 @@ export default {
   color: #444;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
+}
+
+button {
+  margin: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: #0faf87;
+}
+
+button[disabled] {
+  opacity: 0.2;
+  cursor: not-allowed;
 }
 </style>
