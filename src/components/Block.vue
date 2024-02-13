@@ -28,7 +28,7 @@ export default {
     stopTimer() {
       // stop the timer
       clearInterval(this.timer);
-      console.log(this.reactionTime);
+      this.$emit('end', this.reactionTime);
     },
   },
 };
